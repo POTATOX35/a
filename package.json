@@ -1,22 +1,42 @@
 {
-  "name": "remove-comments-on-paste",
-  "displayName": "Remove Comments On Paste",
-  "description": "Automatically removes comments in JavaScript code when pasting.",
-  "version": "1.0.0",
-  "publisher": "YourName",
+  "name": "a",
+  "displayName": "A",
+  "description": "a",
+  "version": "0.0.1",
   "engines": {
-    "vscode": "^1.60.0"
+    "vscode": "^1.96.0"
   },
-  "activationEvents": [
-    "onStartupFinished"
+  "categories": [
+    "Other"
   ],
+  "activationEvents": [],
   "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "a.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
   "scripts": {
-    "vscode:prepublish": "npm run package"
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
   },
   "devDependencies": {
-    "typescript": "^4.3.5",
-    "vsce": "^1.90.0"
+    "@types/vscode": "^1.96.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
   },
   "repository": {
     "type": "git",
